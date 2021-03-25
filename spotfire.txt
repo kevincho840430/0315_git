@@ -1,0 +1,21 @@
+You can insert custom expression in cross table instead of calculated column to avoid grand total being summed up.
+
+Sum([Completed])/Sum([Neg Tar])
+
+This should give the same values as you are currently seeing through calculated value and grand total value will be based on total completed/total neg tar i.e. 8.5/8
+
+------------------------------
+The format of your desired visualization will effect the exact implementation. But here is how you do nested aggregations in general - with the THEN keword:
+
+https://docs.tibco.com/pub/spotfire/7.0.0/doc/html/ncfe/ncfe_using_expre...
+Assuming you have your data table above, the following axes expressions would give you that 55 (Note: your [Value] column is renamed to [myValue] to avoid confusion with the built in [Value] keyword entitity used with the THEN expression):
+
+X-axis: %lt;[Item]%gt;
+Y-axis: Avg([myValue]), Avg([myValue]) THEN Sum([Value]) OVER (All([Axis.X]))
+Colr by: (Column Names)
+
+----------------------------------------------------
+
+https://docs.tibco.com/pub/spotfire/7.0.1/doc/html/vis/vis_axis_aggregation.htm
+----------------------------------------------------
+https://stackoverflow.com/questions/38321514/averaging-aggregatedsum-values-in-spotfire
