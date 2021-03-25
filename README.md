@@ -9,3 +9,6 @@ https://davidgohel.github.io/flextable/reference/fontsize.html
 https://stackoverflow.com/questions/57911389/how-to-change-font-size-in-a-formattable-table-in-r
 https://www.displayr.com/how-to-create-customized-tables-in-displayr-using-r/
 https://cran.r-project.org/web/packages/basictabler/vignettes/v04-styling.html
+
+
+https://stackoverflow.com/questions/38321514/averaging-aggregatedsum-values-in-spotfire
